@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OmdbController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +25,6 @@ Route::get('/movies/edit/{id}', [MovieController::class, 'form_edit']);
 
 Route::post('movies/{movie}/update', [MovieController::class, 'update'])->name('movies.update');
 Route::get('movies/delete/{id}', [MovieController::class, 'delete'])->name('movies.delete');
+
+
+Route::get('/omdb/search', [OmdbController::class, 'search'])->name('omdb.search');
